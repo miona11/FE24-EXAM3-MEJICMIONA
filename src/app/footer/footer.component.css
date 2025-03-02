@@ -1,0 +1,13 @@
+.fixed {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(72, 71, 72, 0.445);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  gap: 1rem;
+  box-shadow: 7px 7px 7px black;
+  position: fixed;
+
+}

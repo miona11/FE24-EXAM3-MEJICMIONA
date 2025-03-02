@@ -1,0 +1,25 @@
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-3 row-cols-xxl-3 padding-2rem mt-10px ">
+  @for(product of products; track product.id){
+  <div>
+      <div class="card" style="width: 18rem;">
+          
+          <div class="wrapper">
+              <div><img style="height: 200px;" class="img-fluid" src="{{ product.image }}" alt="{{ product.description }}"> </div>
+              <h1>{{ product.name }}</h1>
+              <h3>€{{ product.price }}</h3>
+          </div>
+          @if(product.availability){
+              <div class="button-wrapper">
+                  <button class="btn" routerLink="/details/{{product.id}}" style="background-color:rgba(128, 128, 128, 0.692); color: rgba(240, 243, 245, 0.914); ">DETAILS</button>
+                  <button (click)="onAddToCart(product)" class="btn" style="background-color:rgba(128, 128, 128, 0.692); color: rgba(240, 243, 245, 0.914);">ADD TO CART</button>
+                  
+              </div>
+          }@else {
+              <p>Not Available</p>
+          }
+         
+      </div>
+     
+  </div>
+}
+</div>

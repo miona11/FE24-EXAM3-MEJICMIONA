@@ -1,0 +1,40 @@
+<h1>Cart</h1>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>name</th>
+            <th>img</th>
+            <th>qtty</th>
+            <th>price</th>
+            <th>subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(product of products; track product.id){
+            <tr>
+                <td>{{$index}}</td>
+                <td>{{product.name}}</td>
+                <td><img height="50" src="{{product.image}}" alt=""></td>
+                <td>{{product.quantity}}</td>
+                <td>
+                <button (click)="decreaseQuantity(product)" style="background-color: rgba(128, 128, 128, 0.692); color: rgba(240, 243, 245, 0.914);">-</button>
+                {{product.quantity}}
+                <button (click)="increaseQuantity(product)" style="background-color: rgba(128, 128, 128, 0.692); color: rgba(240, 243, 245, 0.914);">+</button>
+              </td>
+                <td>€{{product.price}}</td>
+                <td>€{{product.price * product.quantity}}</td>
+                <td>
+                    <button (click)="removeFromCart(product)" style="color: aliceblue; background-color: black;">Remove</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<h3>Total: {{total}}€</h3>
+<h5>Service Fee (10%): €{{serviceFee}}</h5>
+<h5 *ngIf="discount > 0">Discount (15%): -€{{discount}}</h5>
+<h3>Final Total: €{{finalTotal}}</h3>
+

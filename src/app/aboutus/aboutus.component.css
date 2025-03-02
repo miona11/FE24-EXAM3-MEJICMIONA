@@ -1,0 +1,22 @@
+.container, .end{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.img{
+  max-width: 100%;
+  height: auto;
+}
+
+.list-group{
+  width: 100%;
+  max-width: 400px;
+
+}
+
+.list-group-item{
+  text-align: center;
+}

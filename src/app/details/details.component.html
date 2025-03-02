@@ -1,0 +1,28 @@
+@if(product){
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="container-custom g-3 mx-auto">
+          <div class="wrapper">
+            <div>
+              <img
+              height="200"
+                class="banner-image"
+                src="{{ product.image }}"
+                alt="{{ product.description }}"
+              />
+            </div>
+            <h1>{{ product.name }}</h1>
+            <p>{{ product.description }}</p>
+            <p>€{{ product.price }}</p>
+          </div>
+          <div class="button-wrapper">
+            <button routerLink="/products" class="btn outline" style="background-color:rgba(128, 128, 128, 0.692); color: rgba(240, 243, 245, 0.914);">PRODUCTS</button>
+            <button (click)="onAddToCart(product)" class="btn fill" style="background-color: rgba(128, 128, 128, 0.692); color: rgba(240, 243, 245, 0.914);">ADD TO CART</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+  
